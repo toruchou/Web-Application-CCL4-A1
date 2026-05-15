@@ -1,0 +1,146 @@
+:root {
+  --black: #070410;
+  --dark-purple: #231651;
+  --teal: #4DCCBD;
+  --yellow: #EEF36A;
+  --white: #FFFFFF;
+  --font-heading: "Teko", sans-serif;
+  --font-body: "Lato", sans-serif;
+  --small-space: 16px;
+  --large-space: 16px;
+}
+
+@media (min-width: 720px) {
+  :root { --large-space: 32px; }
+}
+
+@media (min-width: 1024px) {
+  :root { --large-space: 48px; }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background-color: var(--black);
+  color: var(--white);
+  font-family: var(--font-body);
+  line-height: 1.4;
+}
+
+.main-header {
+  background-color: var(--white);
+  color: var(--black);
+  padding: var(--small-space) var(--large-space);
+}
+
+.header-container {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: var(--font-heading);
+  font-size: 2em;
+}
+
+.nav-links {
+  display: none;
+  gap: var(--large-space);
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--black);
+  font-weight: bold;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
+button {
+  font-family: var(--font-heading);
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  padding: 5px var(--small-space);
+  font-size: 2em;
+}
+
+.search-btn {
+  background-color: #e0e0e0;
+  font-size: 1.2em;
+}
+
+.watch-btn {
+  background-color: #d1d1d1;
+  width: fit-content;
+}
+
+.main-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: var(--large-space);
+  display: flex;
+  flex-direction: column;
+  gap: var(--large-space);
+}
+
+.movie-card {
+  background-color: var(--white);
+  color: var(--black);
+  padding: var(--small-space);
+  display: flex;
+  flex-direction: column;
+  gap: var(--small-space);
+  font-size: 1.5em;
+  box-shadow: 5px 5px 0px var(--dark-purple);
+}
+
+.poster-wrapper {
+  background-color: #eee;
+  aspect-ratio: 16 / 9;
+}
+
+.poster-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (min-width: 720px) {
+  .logo { font-size: 3em; }
+  .nav-links { display: flex; }
+  .movie-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--large-space);
+  }
+}
+
+@media (min-width: 1024px) {
+  .movie-card.featured {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+  }
+  .movie-card.featured .movie-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .movie-card.featured .watch-btn {
+    width: 100%;
+    height: 60px;
+  }
+  .movie-card.horizontal {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+  }
+  .movie-card.horizontal .movie-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
